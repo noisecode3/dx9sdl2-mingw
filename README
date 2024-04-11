@@ -1,0 +1,46 @@
+This is a generic template for cross platform SDL2 game development
+with MinGW-w64. There is a trivial cube calculation I found on YouTube
+for SDL2 and a cube in directx9/SDL2 on MinGW Linux.
+
+-- SETUP --
+
+Build/install MinGW64 11.0.0
+on Arch, Slackware, Ubuntu or whatever
+
+This is the versions I used on Slackware 
+# Core tools:
+BINUTILS=2.39
+GCC=13.1.0
+MINGW=v11.0.0
+
+# Support tools:
+GMP=6.3.0
+MPFR=4.2.1
+MPC=1.3.1
+OSL=0.9.7
+ISL=0.26
+CLOOG=0.21.1
+
+Now install SDL2 into you're MinGW folder.
+On Arch it's right in '/usr/x86_64-w64-mingw32' and mixed in '/usr/bin'.
+On Slackware its all in '/usr/mingw-w64-v11.0.0_gcc13.1.0/x86_64-w64-mingw32'
+and you have '/usr/mingw-w64-v11.0.0_gcc13.1.0/bin'.
+
+Download this file SDL2-devel-2.30.2-mingw.tar.gz from github.
+Login to root or write a script or pkg or whatever to unpack this tar.
+In the 'Makefile' change the CROSS_PATH, DO NOT end it with a '/' it will fail
+and you get an incomplete install of SDL2.
+
+CROSS_PATH := /usr/mingw-w64-v11.0.0_gcc13.1.0
+
+Now run 'make cross'
+
+ln -s /usr/mingw-w64-v11.0.0_gcc13.1.0/x86_64-w64-mingw32/bin/SDL2.dll SDL2.dll
+
+Using a link like this is the most simple solution and you will need to distribute
+that SDL2.dll with the exe when its installed.
+
+And now you have a PE32+ executable (GUI) x86-64, for MS Windows
+
+https://learn.microsoft.com/en-us/windows/win32/direct3d9/dx9-graphics
+https://wiki.libsdl.org/SDL2/APIByCategory

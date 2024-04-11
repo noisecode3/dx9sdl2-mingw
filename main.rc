@@ -1,0 +1,42 @@
+#include <winver.h>
+
+#define FILEVERSION_MAJOR      1
+#define FILEVERSION_MINOR      0
+#define FILEVERSION_BUILD      0
+#define FILEVERSION_REVISION   0
+
+#define PRODUCTVERSION_MAJOR   1
+#define PRODUCTVERSION_MINOR   0
+#define PRODUCTVERSION_BUILD   0
+#define PRODUCTVERSION_REVISION 0
+
+VS_VERSION_INFO VERSIONINFO
+FILEVERSION     FILEVERSION_MAJOR,FILEVERSION_MINOR,FILEVERSION_BUILD,FILEVERSION_REVISION
+PRODUCTVERSION  PRODUCTVERSION_MAJOR,PRODUCTVERSION_MINOR,PRODUCTVERSION_BUILD,PRODUCTVERSION_REVISION
+FILEFLAGSMASK   VS_FFI_FILEFLAGSMASK
+FILEFLAGS       0
+FILEOS          VOS_NT_WINDOWS32
+FILETYPE        VFT_APP
+FILESUBTYPE     VFT2_UNKNOWN
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904E4"
+        BEGIN
+            VALUE "CompanyName",      "Your Company Name"
+            VALUE "FileDescription",  "Description of your application"
+            VALUE "FileVersion",      "1.0.0.0"
+            VALUE "InternalName",     "YourInternalName"
+            VALUE "LegalCopyright",   "Copyright © Your Company"
+            VALUE "OriginalFilename", "YourExecutable.exe"
+            VALUE "ProductName",      "Your Product Name"
+            VALUE "ProductVersion",   "1.0.0.0"
+        END
+    END
+
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1252
+    END
+END
+
